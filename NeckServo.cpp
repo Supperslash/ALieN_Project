@@ -5,7 +5,7 @@ NeckServo::NeckServo(){
   joystickYPin = A1;
   buttonPin = 8;  
   servoXPin = 10;
-  servoYPin = 11; 
+  servoYPin = 9; 
   
   initializePins();
 
