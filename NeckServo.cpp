@@ -43,8 +43,8 @@ void NeckServo::handleNeckServo(){
   //}
 
   //if(lockState == false){
-    neckXValue = map(analogRead(joystickXPin), 0, 1023, 0, 90);
-    neckYValue = map(analogRead(joystickYPin), 0, 1023, 0, 90);
+    neckXValue = map(analogRead(joystickXPin), 0, 1023, 0, 180);
+    neckYValue = map(analogRead(joystickYPin), 0, 1023, 0, 180);
   //}
  
   neckServoX.write(neckXValue);
