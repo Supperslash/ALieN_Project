@@ -1,34 +1,34 @@
 #include <Servo.h>
 #include <Arduino.h>
 
-#define delayTime 100
+#define delayTime 250
 
-class NeckServo{
-public:
-  NeckServo();
-  NeckServo(int joystickXPinNew, int joystickYPinNew, int buttonPinNew, int servoXPinNew, int servoYPinNew);
+class NeckServo {
+  public:
+    NeckServo();
+    NeckServo(int joystickXPinNew, int joystickYPinNew, int buttonPinNew, int servoXPinNew, int servoYPinNew);
 
-  void handleNeckServo();
+    void handleNeckServo();
 
-protected:
-  Servo neckServoX;
-  Servo neckServoY;
+  protected:
+    Servo neckServoX;
+    Servo neckServoY;
 
-  unsigned int neckYValue;
-  unsigned int neckXValue;
+    unsigned int neckYValue;
+    unsigned int neckXValue;
 
-  bool buttonValue;
+    bool buttonValue;
 
-  bool lockState;
+    bool lockState;
 
-private:
-  int joystickXPin;
-  int joystickYPin;
-  int buttonPin;
+  private:
+    int joystickXPin;
+    int joystickYPin;
+    int buttonPin;
 
-  int servoXPin;
-  int servoYPin;
+    int servoXPin;
+    int servoYPin;
 
-  void initializePins();
-  void setupVariables();
+    void initializePins();
+    void setupVariables();
 };

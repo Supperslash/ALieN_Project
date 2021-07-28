@@ -1,9 +1,5 @@
-class JawServo{
-public:
-  JawServo();
+#include "JawServo.hpp"
 
-  void handleJawServo();
-
-private:
+JawServo::JawServo(){
   
-};
+}
