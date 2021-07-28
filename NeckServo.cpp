@@ -46,11 +46,8 @@ void NeckServo::handleNeckServo(){
     int testXValue = 0;
     int testYValue = 0;
 
-    testXValue = map(analogRead(joystickXPin), 0, 1023, 0, 64);
-    testYValue = map(analogRead(joystickYPin), 0, 1023, 0, 64);
-
-    neckXValue = map(testXValue, 0, 64, -90, 90);
-    neckYValue = map(testYValue, 0, 64, -90, 90);
+    neckXValue = map(analogRead(joystickXPin), 0, 1023, -90, 90);
+    neckYValue = map(analogRead(joystickYPin), 0, 1023, -90, 90);
   }
  
   neckServoX.write(neckXValue);
