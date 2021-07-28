@@ -50,6 +50,8 @@ void NeckServo::handleNeckServo(){
   neckServoX.write(neckXValue);
   neckServoY.write(neckYValue);
 
+  delay(50);
+
   Serial.print("X-VALUE:  ");
   Serial.print(neckXValue);
   Serial.print("  ;  ");
