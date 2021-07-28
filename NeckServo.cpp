@@ -43,8 +43,8 @@ void NeckServo::handleNeckServo(){
   }
 
   if(lockState == false){
-    unsigned int testXValue = 0;
-    unsigned int testYValue = 0;
+    int testXValue = 0;
+    int testYValue = 0;
 
     testXValue = map(analogRead(joystickXPin), 0, 1023, 0, 64);
     testYValue = map(analogRead(joystickYPin), 0, 1023, 0, 64);

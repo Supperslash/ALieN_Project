@@ -14,8 +14,8 @@ class NeckServo {
     Servo neckServoX;
     Servo neckServoY;
 
-    unsigned int neckYValue;
-    unsigned int neckXValue;
+    int neckYValue;
+    int neckXValue;
 
     bool buttonValue;
 
