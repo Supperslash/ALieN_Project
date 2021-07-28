@@ -35,20 +35,17 @@ void NeckServo::initializePins(){
 }
 
 void NeckServo::handleNeckServo(){
-  buttonValue = digitalRead(buttonPin);
+  //buttonValue = digitalRead(buttonPin);
   
-  if(buttonValue == false){
-    lockState = !lockState;
-    delay(delayTime);
-  }
+  //if(buttonValue == false){
+  //  lockState = !lockState;
+  //  delay(delayTime);
+  //}
 
-  if(lockState == false){
-    int testXValue = 0;
-    int testYValue = 0;
-
+  //if(lockState == false){
     neckXValue = map(analogRead(joystickXPin), 0, 1023, 0, 90);
     neckYValue = map(analogRead(joystickYPin), 0, 1023, 0, 90);
-  }
+  //}
  
   neckServoX.write(neckXValue);
   neckServoY.write(neckYValue);
