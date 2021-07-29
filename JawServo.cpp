@@ -4,7 +4,7 @@ JawServo::JawServo(){}
 
 void JawServo::setup(){
   audioInputPin = A3;
-  servoPin = 12;
+  servoPin = 11s;
 
   initializePins();
 }
