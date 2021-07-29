@@ -35,10 +35,6 @@ void NeckServo::handleNeckServo(){
  
   neckServoX.write(neckXValue);
   neckServoY.write(neckYValue);
-
-  Serial.print(neckXValue);
-  Serial.print("   ;   ");
-  Serial.println(neckYValue);
 }
 
 void NeckServo::setupVariables(){
