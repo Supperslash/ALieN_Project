@@ -10,6 +10,8 @@ class NeckServo {
     void handleNeckServo();
     void setup();
 
+    void lock();
+
   protected:
     Servo neckServoX;
     Servo neckServoY;
@@ -17,14 +19,11 @@ class NeckServo {
     int neckYValue;
     int neckXValue;
 
-    bool buttonValue;
-
     bool lockState;
 
   private:
     int joystickXPin;
     int joystickYPin;
-    int buttonPin;
 
     int servoXPin;
     int servoYPin;
