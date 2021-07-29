@@ -1,5 +1,7 @@
 #include "NeckServo.hpp"
 #include "JawServo.hpp"
+#include <Servo.h>
+#include <Arduino.h>
 
 NeckServo neck = NeckServo();
 
