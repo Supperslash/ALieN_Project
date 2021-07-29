@@ -1,3 +1,10 @@
+/*----------------------
+File:     ALieN_Project.ino
+Author:   MaderDash, Benjaniniooo, ALieN
+Date:     29.07.2021
+Revision: 16
+----------------------*/
+
 #include "NeckServo.hpp"
 #include "JawServo.hpp"
 #include "Button.hpp"
@@ -27,6 +34,9 @@ void loop(){
       break;
     case 2:
       neck.lock();
+      break;
+    case 3:
+      jaw.lock();
       break;
   }
  }

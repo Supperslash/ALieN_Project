@@ -1,5 +1,14 @@
+/*----------------------
+File:     Button.cpp
+Author:   MaderDash, Benjaniniooo, ALieN
+Date:     29.07.2021
+Revision: 16
+----------------------*/
+
+//[INFO] Include the file where the original class is located in 
 #include "Button.hpp"
 
+//[INFO] Default constructor
 Button::Button(){}
 
 void Button::setup(){

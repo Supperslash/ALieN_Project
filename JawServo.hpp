@@ -1,3 +1,10 @@
+/*----------------------
+File:     JawServo.hpp
+Author:   MaderDash, Benjaniniooo, ALieN
+Date:     29.07.2021
+Revision: 16
+----------------------*/
+
 #include <Arduino.h>
 #include <Servo.h>
 
@@ -10,6 +17,8 @@ public:
 
   void setup();
 
+   void lock();
+
 protected:
   Servo jawServo;
 
@@ -21,5 +30,6 @@ private:
   int audioInputPin;
   
   int servoPin; 
-  
+
+  bool lockState;
 };

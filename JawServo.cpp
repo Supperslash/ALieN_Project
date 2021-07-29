@@ -1,12 +1,23 @@
+/*----------------------
+File:     JawServo.cpp
+Author:   MaderDash, Benjaniniooo, ALieN
+Date:     29.07.2021
+Revision: 16
+----------------------*/
+
+//[INFO] Include the file where the original class is located in 
 #include "JawServo.hpp"
 
+//[INFO] Default constructor
 JawServo::JawServo(){}
 
 void JawServo::setup(){
   audioInputPin = A3;
-  servoPin = 11s;
+  servoPin = 11;
 
   initializePins();
+
+  lockState = false;
 }
 
 void JawServo::initializePins(){
@@ -16,14 +27,20 @@ void JawServo::initializePins(){
 }
 
 void JawServo::handleJawServo(){
-  jawValue = analogRead(audioInputPin);
+  if(lockState == false){
+    jawValue = analogRead(audioInputPin);
 
-  jawValue = map(jawValue, 0, 128, 0, 180);
+    jawValue = map(jawValue, 0, 128, 0, 180);
 
-  jawServo.attach(servoPin);
+    jawServo.attach(servoPin);
 
-  jawServo.write(jawValue);
+    jawServo.write(jawValue);
+    
+    Serial.print("JAW:  ");
+    Serial.println(jawValue);
+  }
+}
 
-  Serial.print("JAW:  ");
-  Serial.println(jawValue);
+void JawServo::lock(){
+  lockState = !lockState;
 }
