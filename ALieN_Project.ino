@@ -5,9 +5,12 @@ NeckServo neck = NeckServo();
 
 void setup(){
   Serial.begin(9600);
+  
+  neck.setup();
 }
 
 void loop(){
- neck.handleNeckServo(); 
- delay(200);
+ neck.handleNeckServo();
+
+ delay(500);
  }

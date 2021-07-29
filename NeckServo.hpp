@@ -6,9 +6,9 @@
 class NeckServo {
   public:
     NeckServo();
-    NeckServo(int joystickXPinNew, int joystickYPinNew, int buttonPinNew, int servoXPinNew, int servoYPinNew);
 
     void handleNeckServo();
+    void setup();
 
   protected:
     Servo neckServoX;

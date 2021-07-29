@@ -1,6 +1,10 @@
 #include "NeckServo.hpp"
 
 NeckServo::NeckServo(){
+  Serial.println("POINT 2 HAPPENED");
+}
+
+void NeckServo::setup(){
   joystickXPin = A0;
   joystickYPin = A1;
   buttonPin = 8;  
@@ -10,19 +14,8 @@ NeckServo::NeckServo(){
   initializePins();
 
   setupVariables();
-}
 
-NeckServo::NeckServo(int joystickXPinNew, int joystickYPinNew, int buttonPinNew, int servoXPinNew, int servoYPinNew){
-  joystickXPin = joystickXPinNew;
-  joystickYPin = joystickYPinNew;
-  buttonPin = buttonPinNew; 
-
-  servoXPin = servoXPinNew;
-  servoYPin = servoYPinNew;
-
-  initializePins();
-
-  setupVariables();
+  Serial.println("POINT 3 HAPPENED");
 }
 
 void NeckServo::initializePins(){
@@ -32,6 +25,8 @@ void NeckServo::initializePins(){
 
   neckServoX.attach(servoXPin);
   neckServoY.attach(servoYPin);
+
+  Serial.println("POINT 4 HAPPENED");
 }
 
 void NeckServo::handleNeckServo(){
@@ -46,28 +41,22 @@ void NeckServo::handleNeckServo(){
     neckXValue = analogRead(joystickXPin);
     neckYValue = analogRead(joystickYPin);
   
-    neckXValue = map(neckXValue, 0, 1023, 70, 180);
-    neckYValue = map(neckYValue, 0, 1023, 70, 180);
+    neckXValue = map(neckXValue, 0, 1023, 0, 180);
+    neckYValue = map(neckYValue, 0, 1023, 0, 180);
   //}
+
+  neckServoX.attach(servoXPin);
+  neckServoY.attach(servoYPin);
  
   neckServoX.write(neckXValue);
   neckServoY.write(neckYValue);
 
-  delay(50);
-
-  Serial.print("X-VALUE:  ");
-  Serial.print(neckXValue);
-  Serial.print("  ;  ");
-  Serial.print("Y-VALUE:  ");
-  Serial.println(neckYValue);
+  Serial.println("POINT 5 HAPPENED");
 }
 
 void NeckServo::setupVariables(){
-  neckXValue = 0;
-  neckYValue = 0;
-
   buttonValue = digitalRead(buttonPin);
   lockState = false;
 
-  
+  Serial.println("POINT 1 HAPPENED");
 }
