@@ -30,7 +30,7 @@ void JawServo::handleJawServo(){
   if(lockState == false){
     jawValue = analogRead(audioInputPin);
 
-    jawValue = map(jawValue, 0, 128, 0, 180);
+    jawValue = map(jawValue, 0, 1023, 0, 180);
 
     jawServo.attach(servoPin);
 
