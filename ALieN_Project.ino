@@ -8,6 +8,6 @@ void setup(){
 }
 
 void loop(){
- neck.handleNeckServo(); 
+ neck.handleNeckServo();
  delay(200);
  }
