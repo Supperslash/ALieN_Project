@@ -8,7 +8,6 @@ Revision: 16
 #include <Arduino.h>
 #include <Servo.h>
 
-
 class JawServo{
 public:
   JawServo();

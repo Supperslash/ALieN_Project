@@ -8,10 +8,12 @@ Revision: 16
 #include "NeckServo.hpp"
 #include "JawServo.hpp"
 #include "Button.hpp"
+#include "Fire.hpp"
 
 NeckServo neck = NeckServo();
 Button button = Button();
 JawServo jaw = JawServo();
+Fire fire = Fire();
 
 void setup(){
   Serial.begin(9600);
@@ -19,6 +21,8 @@ void setup(){
   button.setup();
   neck.setup();
   jaw.setup();
+  fire.setup();
+  fire.setSource(10);
 
 }
 
@@ -39,4 +43,9 @@ void loop(){
       jaw.lock();
       break;
   }
+
+  fire.update();
+  fire.render();
+
+  delay(30000);
  }
