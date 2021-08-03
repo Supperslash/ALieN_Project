@@ -35,9 +35,6 @@ void JawServo::handleJawServo(){
     jawServo.attach(servoPin);
 
     jawServo.write(jawValue);
-    
-    Serial.print("JAW:  ");
-    Serial.println(jawValue);
   }
 }
 

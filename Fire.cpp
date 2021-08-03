@@ -78,6 +78,15 @@ void Fire::render(){
       leds[i * (HEIGHT / 2) + j].r = (byte) pgm_read_byte(&(Fire::palette[avg][0]));
       leds[i * (HEIGHT / 2) + j].g = (byte) pgm_read_byte(&(Fire::palette[avg][1]));
       leds[i * (HEIGHT / 2) + j].b = (byte) pgm_read_byte(&(Fire::palette[avg][2]));
+
+      Serial.print((i * (HEIGHT / 2) + j));
+      Serial.print(": {");
+      Serial.print((byte) pgm_read_byte(&(Fire::palette[avg][0])));
+      Serial.print(", ");
+      Serial.print((byte) pgm_read_byte(&(Fire::palette[avg][1])));
+      Serial.print(", ");
+      Serial.print((byte) pgm_read_byte(&(Fire::palette[avg][2])));
+      Serial.println("}");
     }
   }
   FastLED.show();
