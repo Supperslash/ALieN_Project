@@ -46,6 +46,4 @@ void loop(){
 
   fire.update();
   fire.render();
-
-  delay(30000);
  }

@@ -71,37 +71,13 @@ void Fire::update(){
 
 void Fire::render(){
   for(int i = 0; i < WIDTH / 2; i++){
-    if(i % 2 == 0){
-    
-      for(int j = 0; j < HEIGHT / 2; j++){
-        int avg = round((fireValues[i * 2][j * 2] + fireValues[i * 2 + 1][j * 2] + fireValues[i * 2][j * 2 + 1] + fireValues[i * 2 + 1][j * 2 + 1]) / 4);
+    for(int j = 0; j < HEIGHT / 2; j++){
+      int avg = fireValues[i * 2][j * 2];
+      //int avg = round((fireValues[i * 2][j * 2] + fireValues[i * 2 + 1][j * 2] + fireValues[i * 2][j * 2 + 1] + fireValues[i * 2 + 1][j * 2 + 1]) / 4);
         
-        leds[i * (HEIGHT / 2) + j].r = (byte) pgm_read_byte(&(Fire::palette[avg][0]));
-        leds[i * (HEIGHT / 2) + j].g = (byte) pgm_read_byte(&(Fire::palette[avg][1]));
-        leds[i * (HEIGHT / 2) + j].b = (byte) pgm_read_byte(&(Fire::palette[avg][2]));
-
-        Serial.print(i * (HEIGHT / 2) + j);
-        Serial.print(": [ ");
-        Serial.print(i * 2);
-        Serial.print(" ] [ ");
-        Serial.print(j * 2);
-        Serial.println(" ]");
-      }
-    }else{
-      for(int j = 0; j < HEIGHT / 2; j++){
-        int avg = round((fireValues[i * 2][j * 2] + fireValues[i * 2 + 1][j * 2] + fireValues[i * 2][j * 2 + 1] + fireValues[i * 2 + 1][j * 2 + 1]) / 4);
-        
-        leds[HEIGHT - (i * (HEIGHT / 2) + j)].r = (byte) pgm_read_byte(&(Fire::palette[avg][0]));
-        leds[HEIGHT - (i * (HEIGHT / 2) + j)].g = (byte) pgm_read_byte(&(Fire::palette[avg][1]));
-        leds[HEIGHT - (i * (HEIGHT / 2) + j)].b = (byte) pgm_read_byte(&(Fire::palette[avg][2]));
-
-        Serial.print(i * (HEIGHT / 2) + j);
-        Serial.print(": [ ");
-        Serial.print(i * 2);
-        Serial.print(" ] [ ");
-        Serial.print(j * 2);
-        Serial.println(" ]");
-      }
+      leds[i * (HEIGHT / 2) + j].r = (byte) pgm_read_byte(&(Fire::palette[avg][0]));
+      leds[i * (HEIGHT / 2) + j].g = (byte) pgm_read_byte(&(Fire::palette[avg][1]));
+      leds[i * (HEIGHT / 2) + j].b = (byte) pgm_read_byte(&(Fire::palette[avg][2]));
     }
   }
   FastLED.show();
